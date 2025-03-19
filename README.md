@@ -4,7 +4,6 @@ The backend of the Blackjack game is built using Python with Django, serving as 
 
 <img src="blackjack.png" alt="Blackjack Game Image" width="600">
 
-
 ## Features
 
 - Start a new game with the "Start Game" button
@@ -14,6 +13,7 @@ The backend of the Blackjack game is built using Python with Django, serving as 
 - Option to reset the game after it ends
 
 ## How to Play
+
 1. When the game starts, both the player and dealer receive two cards.
 2. The player can choose to "Hit" (draw another card) or "Stand" (end their turn).
 3. The goal is to get a hand value as close to 21 as possible without going over.
@@ -32,78 +32,73 @@ To set up the backend:
    ```bash
    git clone https://github.com/meso1007/blackjack.git
 
+   ```
 
 2. Navigate to the backend directory (if it’s separated):
 
-bash
-Copy
-Edit
-cd blackjack/backend
+   ```bash
+    cd blackjack/backend
+   ```
 
 3. Create a virtual environment (optional but recommended):
 
-bash
-Copy
-Edit
-python3 -m venv venv
+    ````bash
+    python3 -m venv venv
+    ```
 
 4. Activate the virtual environment:
 
-On Windows:
+    On Windows:
 
-bash
-Copy
-Edit
-.\venv\Scripts\activate
+        ```bash
+        .\venv\Scripts\activate
+        ```
+        
 
-5. On macOS/Linux:
+    On macOS/Linux:
 
-bash
-Copy
-Edit
-source venv/bin/activate
+        ```bash
+        source venv/bin/activate
+        ```
 
-6. Install the required dependencies:
+5. Install the required dependencies:
 
-bash
-Copy
-Edit
-pip install -r requirements.txt
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-7. Apply database migrations:
+6. Apply database migrations:
 
-bash
-Copy
-Edit
-python manage.py migrate
+    ```bash
+    python manage.py migrate
+    ```
 
-8. Start the Django development server:
+7. Start the Django development server:
 
-bash
-Copy
-Edit
-python manage.py runserver
+    ```bash
+    python manage.py runserver
+    ```
 
-9. The backend API will be available at http://127.0.0.1:8000/.
+8. The backend API will be available at http://127.0.0.1:8000/.
 
 
 ## API Endpoints
 
 The backend exposes several API endpoints to interact with the Blackjack game:
 
-### `POST /api/start-game/`
+### `POST /blackjack/start-game/`
 Starts a new game session and returns the initial game state.
 
 - **Request**: No data required.
 - **Response**: The initial game state, including the player and dealer hands, and game status.
 
-### `POST /api/hit/{game_id}/`
+### `POST /blackjack/hit/{game_id}/`
 Draws a card for the player and updates the game state.
 
 - **Request**: No data required.
 - **Response**: The updated game state with the player's new hand.
 
-### `POST /api/stand/{game_id}/`
+### `POST /blackjack/stand/{game_id}/`
 Ends the player's turn. The dealer will draw cards until they reach a score of 17 or higher. The final result (win, loss, or draw) is returned.
 
 - **Request**: No data required.
@@ -140,3 +135,4 @@ The backend handles the following key game actions:
 
 I’ve made the structure even clearer and consistent across the sections. You can easily copy this version directly! Let me know if there's anything else you'd like to modify!
 
+````
